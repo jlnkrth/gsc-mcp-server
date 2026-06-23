@@ -19,8 +19,8 @@
     "README.md"
   ],
   "bin": {
-    "gsc-mcp": "./src/index.js",
-    "gsc-mcp-auth": "./src/auth.js"
+    "gsc-mcp": "src/index.js",
+    "gsc-mcp-auth": "src/auth.js"
   },
   "scripts": {
     "start": "node src/index.js",
