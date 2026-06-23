@@ -13,6 +13,22 @@ MCP server for **Google Search Console**. Query search performance, list propert
 
 Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` before auth (see [Google Cloud setup](#google-cloud-setup)).
 
+> **Using a Google passkey to sign in?** That's fine — passkey is only for logging into Google in the browser during `npm run auth`. It does not replace your GCP OAuth **client ID and secret** (you still need those env vars).
+
+## Publishing to npm (maintainers)
+
+npm accounts with **passkey 2FA** cannot use `--otp=123456` (that's for authenticator apps). Use **npm 11+** and the browser flow:
+
+```bash
+npm install -g npm@11   # once
+cd gsc-mcp-server
+npm publish --access public
+```
+
+When publish fails with `EOTP`, npm prints a URL like `https://www.npmjs.com/auth/cli/...` — open it, approve with your **passkey**, then run `npm publish --access public` again in the same terminal.
+
+Do **not** use placeholder recovery codes from chat; generate new ones at [npm 2FA settings](https://www.npmjs.com/settings/jlnkrth/tfa) if needed.
+
 ## Tools
 
 | Tool | Description |
@@ -142,6 +158,8 @@ Once connected, you can ask your AI assistant:
 | Port 3336 in use | Free the port or stop the conflicting process, then re-run auth |
 | `403` / permission denied on API calls | Confirm the signed-in Google account has access to the property in Search Console |
 | MCP client can't find `npx` | Use the full path to `node` and `src/index.js` in your config |
+| Google OAuth fails after passkey sign-in | Your `GOOGLE_CLIENT_ID` / `SECRET` must be real values from GCP — not placeholders like `your-client-id`. Check redirect URI `http://localhost:3336/callback` is in your OAuth client |
+| `npm publish` asks for OTP but you use passkey | Upgrade to `npm@11`, run `npm publish --access public`, open the browser URL npm prints, approve with passkey, publish again |
 
 ## Related MCP servers
 
