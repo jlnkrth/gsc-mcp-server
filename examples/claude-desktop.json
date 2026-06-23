@@ -2,7 +2,7 @@
   "mcpServers": {
     "google-search-console": {
       "command": "npx",
-      "args": ["-y", "gsc-mcp-server"],
+      "args": ["-y", "@jlnkrth/gsc-mcp-server"],
       "env": {
         "GOOGLE_CLIENT_ID": "YOUR_CLIENT_ID",
         "GOOGLE_CLIENT_SECRET": "YOUR_CLIENT_SECRET",

@@ -1,9 +1,23 @@
 {
-  "name": "gsc-mcp-server",
+  "name": "@jlnkrth/gsc-mcp-server",
   "version": "1.0.0",
   "description": "MCP server for Google Search Console — list sites, query search analytics, inspect URLs",
   "type": "module",
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bykreth/gsc-mcp-server.git"
+  },
+  "homepage": "https://github.com/bykreth/gsc-mcp-server#readme",
+  "bugs": {
+    "url": "https://github.com/bykreth/gsc-mcp-server/issues"
+  },
+  "author": "Julian Kreth",
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
   "bin": {
     "gsc-mcp": "./src/index.js",
     "gsc-mcp-auth": "./src/auth.js"

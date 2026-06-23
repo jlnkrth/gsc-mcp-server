@@ -29,13 +29,13 @@ MCP server for **Google Search Console**. Query search performance, list propert
 
 ## Install and authenticate
 
-### Option A: From npm (after publish)
+### Option A: From npm
 
 ```bash
 export GOOGLE_CLIENT_ID="your-client-id.apps.googleusercontent.com"
 export GOOGLE_CLIENT_SECRET="your-client-secret"
 
-npx gsc-mcp-auth
+npx -p @jlnkrth/gsc-mcp-server gsc-mcp-auth
 ```
 
 ### Option B: From source
@@ -64,7 +64,7 @@ Add to `~/.cursor/mcp.json` (merge with existing servers):
   "mcpServers": {
     "google-search-console": {
       "command": "npx",
-      "args": ["-y", "gsc-mcp-server"],
+      "args": ["-y", "@jlnkrth/gsc-mcp-server"],
       "env": {
         "GOOGLE_CLIENT_ID": "YOUR_CLIENT_ID",
         "GOOGLE_CLIENT_SECRET": "YOUR_CLIENT_SECRET",
@@ -122,7 +122,7 @@ Once connected, you can ask your AI assistant:
 
 | Symptom | Fix |
 |---------|-----|
-| `Not authenticated` | Run `npx gsc-mcp-auth`, then restart your MCP client |
+| `Not authenticated` | Run `npx -p @jlnkrth/gsc-mcp-server gsc-mcp-auth`, then restart your MCP client |
 | No `refresh_token` in saved tokens | Revoke the app at [Google Account permissions](https://myaccount.google.com/permissions), then re-run auth |
 | Port 3336 in use | Free the port or stop the conflicting process, then re-run auth |
 | `403` / permission denied on API calls | Confirm the signed-in Google account has access to the property in Search Console |
