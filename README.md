@@ -41,7 +41,7 @@ npx -p @jlnkrth/gsc-mcp-server gsc-mcp-auth
 ### Option B: From source
 
 ```bash
-git clone https://github.com/bykreth/gsc-mcp-server.git
+git clone https://github.com/jlnkrth/gsc-mcp-server.git
 cd gsc-mcp-server
 npm install
 

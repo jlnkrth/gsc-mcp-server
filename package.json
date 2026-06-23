@@ -6,11 +6,11 @@
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bykreth/gsc-mcp-server.git"
+    "url": "git+https://github.com/jlnkrth/gsc-mcp-server.git"
   },
-  "homepage": "https://github.com/bykreth/gsc-mcp-server#readme",
+  "homepage": "https://github.com/jlnkrth/gsc-mcp-server#readme",
   "bugs": {
-    "url": "https://github.com/bykreth/gsc-mcp-server/issues"
+    "url": "https://github.com/jlnkrth/gsc-mcp-server/issues"
   },
   "author": "Julian Kreth",
   "files": [
