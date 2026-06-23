@@ -2,6 +2,17 @@
 
 MCP server for **Google Search Console**. Query search performance, list properties, and inspect URL indexing status from Cursor, Claude Desktop, or any MCP-compatible client.
 
+## Quick start
+
+| Situation | Auth | Run MCP server |
+|-----------|------|----------------|
+| **Cloned this repo** (you are in the project folder) | `npm run auth` | `npm start` |
+| **Installed from npm** (any other directory) | `npx -y -p @jlnkrth/gsc-mcp-server gsc-mcp-auth` | `npx -y @jlnkrth/gsc-mcp-server` |
+
+> `npx @jlnkrth/gsc-mcp-server` does **not** work from inside a cloned copy of this repo — npm resolves to the local folder without linking bin shims. Use `npm run` commands instead.
+
+Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` before auth (see [Google Cloud setup](#google-cloud-setup)).
+
 ## Tools
 
 | Tool | Description |
