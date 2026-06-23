@@ -46,7 +46,8 @@ function requireAuth() {
           type: "text",
           text:
             "Not authenticated. Run the OAuth flow once:\n" +
-            "  GOOGLE_CLIENT_ID=... GOOGLE_CLIENT_SECRET=... npx gsc-mcp-auth\n" +
+            "  GOOGLE_CLIENT_ID=... GOOGLE_CLIENT_SECRET=... npx -y -p @jlnkrth/gsc-mcp-server gsc-mcp-auth\n" +
+            "  (or npm run auth if you cloned the repo)\n" +
             "Then restart your MCP client.",
         },
       ],

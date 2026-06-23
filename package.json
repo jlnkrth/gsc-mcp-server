@@ -1,6 +1,6 @@
 {
   "name": "@jlnkrth/gsc-mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server for Google Search Console — list sites, query search analytics, inspect URLs",
   "type": "module",
   "main": "src/index.js",
@@ -19,6 +19,7 @@
     "README.md"
   ],
   "bin": {
+    "gsc-mcp-server": "src/index.js",
     "gsc-mcp": "src/index.js",
     "gsc-mcp-auth": "src/auth.js"
   },

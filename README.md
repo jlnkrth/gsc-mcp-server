@@ -35,8 +35,11 @@ MCP server for **Google Search Console**. Query search performance, list propert
 export GOOGLE_CLIENT_ID="your-client-id.apps.googleusercontent.com"
 export GOOGLE_CLIENT_SECRET="your-client-secret"
 
-npx -p @jlnkrth/gsc-mcp-server gsc-mcp-auth
+# Auth (run from any directory except inside a cloned copy of this repo)
+npx -y -p @jlnkrth/gsc-mcp-server gsc-mcp-auth
 ```
+
+> **Note:** If you cloned the repo and are inside the project folder, use `npm run auth` instead of `npx` — npm resolves to the local package and bin shims are not linked there.
 
 ### Option B: From source
 
@@ -122,7 +125,8 @@ Once connected, you can ask your AI assistant:
 
 | Symptom | Fix |
 |---------|-----|
-| `Not authenticated` | Run `npx -p @jlnkrth/gsc-mcp-server gsc-mcp-auth`, then restart your MCP client |
+| `Not authenticated` | Run `npx -y -p @jlnkrth/gsc-mcp-server gsc-mcp-auth` (or `npm run auth` if inside a clone), then restart your MCP client |
+| `npx` fails inside cloned repo | Use `npm run auth` / `npm start` locally, or run `npx` from another directory |
 | No `refresh_token` in saved tokens | Revoke the app at [Google Account permissions](https://myaccount.google.com/permissions), then re-run auth |
 | Port 3336 in use | Free the port or stop the conflicting process, then re-run auth |
 | `403` / permission denied on API calls | Confirm the signed-in Google account has access to the property in Search Console |
